@@ -15,6 +15,13 @@
 		8A16A5C51B992FF700885022 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A16A5C41B992FF700885022 /* Images.xcassets */; };
 		8A16A5C81B992FF700885022 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A16A5C61B992FF700885022 /* LaunchScreen.xib */; };
 		8A16A5D41B992FF700885022 /* WattWorkoutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A16A5D31B992FF700885022 /* WattWorkoutTests.swift */; };
+		8A16A5E71B993C4000885022 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A16A5E61B993C4000885022 /* InterfaceController.swift */; };
+		8A16A5E91B993C4000885022 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A16A5E81B993C4000885022 /* NotificationController.swift */; };
+		8A16A5EB1B993C4000885022 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A16A5EA1B993C4000885022 /* Images.xcassets */; };
+		8A16A5EF1B993C4100885022 /* WattWorkout WatchKit App.app in Resources */ = {isa = PBXBuildFile; fileRef = 8A16A5EE1B993C4000885022 /* WattWorkout WatchKit App.app */; };
+		8A16A5F71B993C4100885022 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A16A5F51B993C4100885022 /* Interface.storyboard */; };
+		8A16A5F91B993C4100885022 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A16A5F81B993C4100885022 /* Images.xcassets */; };
+		8A16A5FD1B993C4100885022 /* WattWorkout WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8A16A5E11B993C4000885022 /* WattWorkout WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,7 +32,35 @@
 			remoteGlobalIDString = 8A16A5B21B992FF700885022;
 			remoteInfo = WattWorkout;
 		};
+		8A16A5F01B993C4100885022 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8A16A5AB1B992FF700885022 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8A16A5ED1B993C4000885022;
+			remoteInfo = "WattWorkout WatchKit App";
+		};
+		8A16A5FA1B993C4100885022 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8A16A5AB1B992FF700885022 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8A16A5E01B993C4000885022;
+			remoteInfo = "WattWorkout WatchKit Extension";
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8A16A5FC1B993C4100885022 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				8A16A5FD1B993C4100885022 /* WattWorkout WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		8A16A5B31B992FF700885022 /* WattWorkout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WattWorkout.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -40,6 +75,16 @@
 		8A16A5CD1B992FF700885022 /* WattWorkoutTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WattWorkoutTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A16A5D21B992FF700885022 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8A16A5D31B992FF700885022 /* WattWorkoutTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WattWorkoutTests.swift; sourceTree = "<group>"; };
+		8A16A5E11B993C4000885022 /* WattWorkout WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "WattWorkout WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A16A5E41B993C4000885022 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8A16A5E51B993C4000885022 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		8A16A5E61B993C4000885022 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		8A16A5E81B993C4000885022 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		8A16A5EA1B993C4000885022 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		8A16A5EE1B993C4000885022 /* WattWorkout WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WattWorkout WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A16A5F41B993C4100885022 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8A16A5F61B993C4100885022 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		8A16A5F81B993C4100885022 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +102,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8A16A5DE1B993C4000885022 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -65,6 +117,8 @@
 			children = (
 				8A16A5B51B992FF700885022 /* WattWorkout */,
 				8A16A5D01B992FF700885022 /* WattWorkoutTests */,
+				8A16A5E21B993C4000885022 /* WattWorkout WatchKit Extension */,
+				8A16A5F21B993C4100885022 /* WattWorkout WatchKit App */,
 				8A16A5B41B992FF700885022 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -74,6 +128,8 @@
 			children = (
 				8A16A5B31B992FF700885022 /* WattWorkout.app */,
 				8A16A5CD1B992FF700885022 /* WattWorkoutTests.xctest */,
+				8A16A5E11B993C4000885022 /* WattWorkout WatchKit Extension.appex */,
+				8A16A5EE1B993C4000885022 /* WattWorkout WatchKit App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -118,6 +174,44 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		8A16A5E21B993C4000885022 /* WattWorkout WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				8A16A5E61B993C4000885022 /* InterfaceController.swift */,
+				8A16A5E81B993C4000885022 /* NotificationController.swift */,
+				8A16A5EA1B993C4000885022 /* Images.xcassets */,
+				8A16A5E31B993C4000885022 /* Supporting Files */,
+			);
+			path = "WattWorkout WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		8A16A5E31B993C4000885022 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8A16A5E41B993C4000885022 /* Info.plist */,
+				8A16A5E51B993C4000885022 /* PushNotificationPayload.apns */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8A16A5F21B993C4100885022 /* WattWorkout WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				8A16A5F51B993C4100885022 /* Interface.storyboard */,
+				8A16A5F81B993C4100885022 /* Images.xcassets */,
+				8A16A5F31B993C4100885022 /* Supporting Files */,
+			);
+			path = "WattWorkout WatchKit App";
+			sourceTree = "<group>";
+		};
+		8A16A5F31B993C4100885022 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8A16A5F41B993C4100885022 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -128,10 +222,12 @@
 				8A16A5AF1B992FF700885022 /* Sources */,
 				8A16A5B01B992FF700885022 /* Frameworks */,
 				8A16A5B11B992FF700885022 /* Resources */,
+				8A16A5FC1B993C4100885022 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				8A16A5FB1B993C4100885022 /* PBXTargetDependency */,
 			);
 			name = WattWorkout;
 			productName = WattWorkout;
@@ -156,6 +252,39 @@
 			productReference = 8A16A5CD1B992FF700885022 /* WattWorkoutTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		8A16A5E01B993C4000885022 /* WattWorkout WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8A16A6011B993C4100885022 /* Build configuration list for PBXNativeTarget "WattWorkout WatchKit Extension" */;
+			buildPhases = (
+				8A16A5DD1B993C4000885022 /* Sources */,
+				8A16A5DE1B993C4000885022 /* Frameworks */,
+				8A16A5DF1B993C4000885022 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8A16A5F11B993C4100885022 /* PBXTargetDependency */,
+			);
+			name = "WattWorkout WatchKit Extension";
+			productName = "WattWorkout WatchKit Extension";
+			productReference = 8A16A5E11B993C4000885022 /* WattWorkout WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit-extension";
+		};
+		8A16A5ED1B993C4000885022 /* WattWorkout WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8A16A5FE1B993C4100885022 /* Build configuration list for PBXNativeTarget "WattWorkout WatchKit App" */;
+			buildPhases = (
+				8A16A5EC1B993C4000885022 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "WattWorkout WatchKit App";
+			productName = "WattWorkout WatchKit App";
+			productReference = 8A16A5EE1B993C4000885022 /* WattWorkout WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -171,6 +300,13 @@
 					8A16A5CC1B992FF700885022 = {
 						CreatedOnToolsVersion = 6.4;
 						TestTargetID = 8A16A5B21B992FF700885022;
+					};
+					8A16A5E01B993C4000885022 = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					8A16A5ED1B993C4000885022 = {
+						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = Y3C4A323WT;
 					};
 				};
 			};
@@ -189,6 +325,8 @@
 			targets = (
 				8A16A5B21B992FF700885022 /* WattWorkout */,
 				8A16A5CC1B992FF700885022 /* WattWorkoutTests */,
+				8A16A5E01B993C4000885022 /* WattWorkout WatchKit Extension */,
+				8A16A5ED1B993C4000885022 /* WattWorkout WatchKit App */,
 			);
 		};
 /* End PBXProject section */
@@ -208,6 +346,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8A16A5DF1B993C4000885022 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A16A5EF1B993C4100885022 /* WattWorkout WatchKit App.app in Resources */,
+				8A16A5EB1B993C4000885022 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8A16A5EC1B993C4000885022 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A16A5F71B993C4100885022 /* Interface.storyboard in Resources */,
+				8A16A5F91B993C4100885022 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,6 +389,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8A16A5DD1B993C4000885022 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A16A5E91B993C4000885022 /* NotificationController.swift in Sources */,
+				8A16A5E71B993C4000885022 /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -240,6 +405,16 @@
 			isa = PBXTargetDependency;
 			target = 8A16A5B21B992FF700885022 /* WattWorkout */;
 			targetProxy = 8A16A5CE1B992FF700885022 /* PBXContainerItemProxy */;
+		};
+		8A16A5F11B993C4100885022 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8A16A5ED1B993C4000885022 /* WattWorkout WatchKit App */;
+			targetProxy = 8A16A5F01B993C4100885022 /* PBXContainerItemProxy */;
+		};
+		8A16A5FB1B993C4100885022 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8A16A5E01B993C4000885022 /* WattWorkout WatchKit Extension */;
+			targetProxy = 8A16A5FA1B993C4100885022 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -258,6 +433,14 @@
 				8A16A5C71B992FF700885022 /* Base */,
 			);
 			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		8A16A5F51B993C4100885022 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8A16A5F61B993C4100885022 /* Base */,
+			);
+			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -398,6 +581,68 @@
 			};
 			name = Release;
 		};
+		8A16A5FF1B993C4100885022 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				IBSC_MODULE = WattWorkout_WatchKit_Extension;
+				INFOPLIST_FILE = "WattWorkout WatchKit App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Debug;
+		};
+		8A16A6001B993C4100885022 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				IBSC_MODULE = WattWorkout_WatchKit_Extension;
+				INFOPLIST_FILE = "WattWorkout WatchKit App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Release;
+		};
+		8A16A6021B993C4100885022 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "WattWorkout WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		8A16A6031B993C4100885022 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "WattWorkout WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -417,6 +662,7 @@
 				8A16A5D91B992FF700885022 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8A16A5DA1B992FF700885022 /* Build configuration list for PBXNativeTarget "WattWorkoutTests" */ = {
 			isa = XCConfigurationList;
@@ -425,6 +671,25 @@
 				8A16A5DC1B992FF700885022 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8A16A5FE1B993C4100885022 /* Build configuration list for PBXNativeTarget "WattWorkout WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A16A5FF1B993C4100885022 /* Debug */,
+				8A16A6001B993C4100885022 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8A16A6011B993C4100885022 /* Build configuration list for PBXNativeTarget "WattWorkout WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A16A6021B993C4100885022 /* Debug */,
+				8A16A6031B993C4100885022 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
