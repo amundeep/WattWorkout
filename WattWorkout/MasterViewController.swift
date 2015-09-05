@@ -78,28 +78,28 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 //    @IBAction func editWorkouts(sender: UIBarButtonItem) {
 //        self.editing = !self.editing
 //    }
-//    
-//    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-//        return true
-//    }
-//    
-//    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-//        var itemToMove = workouts[fromIndexPath.row]
-//        workouts.removeAtIndex(fromIndexPath.row)
-//        workouts.insert(itemToMove, atIndex: toIndexPath.row)
-//    }
-//    
-//    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-//        // Return false if you do not want the specified item to be editable.
-//        return true
-//    }
-//    
-//    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-//        if editingStyle == .Delete {
-//            workouts.removeAtIndex(indexPath.row)
-//            workoutTable.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
-//        }
-//    }
+    
+    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    
+    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
+        var itemToMove = workouts[fromIndexPath.row]
+        workouts.removeAtIndex(fromIndexPath.row)
+        workouts.insert(itemToMove, atIndex: toIndexPath.row)
+    }
+    
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        // Return false if you do not want the specified item to be editable.
+        return true
+    }
+    
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == .Delete {
+            workouts.removeAtIndex(indexPath.row)
+            workoutTable.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+        }
+    }
     
     
     
