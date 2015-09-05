@@ -78,19 +78,10 @@ class AddWorkoutTableViewController: UITableViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "SaveWorkoutDetail" {
-//            if !(workoutName.text.isEmpty) {
-//                wName = workoutName.text
-//            }else{
-//                var alert = UIAlertController(title: "Need name!", message: "Your workout needs a name, please enter one.", preferredStyle: UIAlertControllerStyle.Alert)
-//                alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil))
-//                self.presentViewController(alert, animated: true, completion: nil)
-//                
-//            }
             defValue = 0.0
             println("Name: " + wName + "\nType: " + wType + "\nValue: " + defValue.description)
             workout = Workout(wType: wType, wName: wName, cValue: defValue)
             tableData.insert(workout, atIndex: 0)
-            
         }
     }
     
