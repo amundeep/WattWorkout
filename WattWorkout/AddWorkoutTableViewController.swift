@@ -47,15 +47,16 @@ class AddWorkoutTableViewController: UITableViewController {
         } else if indexPath.section == 1 {
             var index = indexPath.row
             switch index {
+            case 2:
+                wType = "Strength"
             case 1:
                 wType = "Cardio"
-                tableView.cellForRowAtIndexPath(indexPath)?.accessoryType = UITableViewCellAccessoryType.Checkmark
             case 0:
                 fallthrough
             default:
                 wType = "Lift"
-                tableView.cellForRowAtIndexPath(indexPath)?.accessoryType = UITableViewCellAccessoryType.Checkmark
             }
+            tableView.cellForRowAtIndexPath(indexPath)?.accessoryType = UITableViewCellAccessoryType.Checkmark
         }
         
         tableView.deselectRowAtIndexPath(indexPath, animated: true)

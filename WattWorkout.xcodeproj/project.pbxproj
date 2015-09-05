@@ -22,13 +22,13 @@
 		8A16A5F71B993C4100885022 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A16A5F51B993C4100885022 /* Interface.storyboard */; };
 		8A16A5F91B993C4100885022 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A16A5F81B993C4100885022 /* Images.xcassets */; };
 		8A16A5FD1B993C4100885022 /* WattWorkout WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8A16A5E11B993C4000885022 /* WattWorkout WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		8A5A769F1B9ADA8900C3A82E /* WattStrIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A5A769E1B9ADA8900C3A82E /* WattStrIcon.png */; };
 		8A9BCA041B995831004571D7 /* AddWorkoutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9BCA031B995831004571D7 /* AddWorkoutTableViewController.swift */; };
 		8AAE4FC81B99E6BC00E012FB /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AAE4FC71B99E6BC00E012FB /* Workout.swift */; };
 		8AAE4FCA1B99EF1A00E012FB /* TableData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AAE4FC91B99EF1A00E012FB /* TableData.swift */; };
 		8AAE4FCD1B9A235700E012FB /* WattRunIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AAE4FCB1B9A235700E012FB /* WattRunIcon.png */; };
 		8AAE4FD01B9A239100E012FB /* WattLiftIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AAE4FCF1B9A239100E012FB /* WattLiftIcon.png */; };
 		8AAE4FD21B9A86E100E012FB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AAE4FD11B9A86E100E012FB /* Foundation.framework */; };
-		8AE173251B9AA4BC00DBE59E /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AE173241B9AA4BC00DBE59E /* settings.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,13 +92,13 @@
 		8A16A5F41B993C4100885022 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8A16A5F61B993C4100885022 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		8A16A5F81B993C4100885022 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		8A5A769E1B9ADA8900C3A82E /* WattStrIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WattStrIcon.png; sourceTree = "<group>"; };
 		8A9BCA031B995831004571D7 /* AddWorkoutTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddWorkoutTableViewController.swift; sourceTree = "<group>"; };
 		8AAE4FC71B99E6BC00E012FB /* Workout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
 		8AAE4FC91B99EF1A00E012FB /* TableData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableData.swift; sourceTree = "<group>"; };
 		8AAE4FCB1B9A235700E012FB /* WattRunIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WattRunIcon.png; sourceTree = "<group>"; };
 		8AAE4FCF1B9A239100E012FB /* WattLiftIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WattLiftIcon.png; sourceTree = "<group>"; };
 		8AAE4FD11B9A86E100E012FB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		8AE173241B9AA4BC00DBE59E /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = settings.png; path = ../../../../../Downloads/settings.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,7 +162,7 @@
 				8A16A5C11B992FF700885022 /* Main.storyboard */,
 				8A16A5C41B992FF700885022 /* Images.xcassets */,
 				8AAE4FCB1B9A235700E012FB /* WattRunIcon.png */,
-				8AE173241B9AA4BC00DBE59E /* settings.png */,
+				8A5A769E1B9ADA8900C3A82E /* WattStrIcon.png */,
 				8AAE4FCF1B9A239100E012FB /* WattLiftIcon.png */,
 				8A16A5C61B992FF700885022 /* LaunchScreen.xib */,
 				8A16A5BA1B992FF700885022 /* WattWorkout.xcdatamodeld */,
@@ -358,9 +358,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8AE173251B9AA4BC00DBE59E /* settings.png in Resources */,
 				8AAE4FCD1B9A235700E012FB /* WattRunIcon.png in Resources */,
 				8AAE4FD01B9A239100E012FB /* WattLiftIcon.png in Resources */,
+				8A5A769F1B9ADA8900C3A82E /* WattStrIcon.png in Resources */,
 				8A16A5C31B992FF700885022 /* Main.storyboard in Resources */,
 				8A16A5C81B992FF700885022 /* LaunchScreen.xib in Resources */,
 				8A16A5C51B992FF700885022 /* Images.xcassets in Resources */,

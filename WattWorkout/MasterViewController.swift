@@ -29,6 +29,9 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //Edit/Done button
+        self.navigationItem.leftBarButtonItem = self.editButtonItem()
+        
 //        //Settings button
 //        let button: UIButton = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
 //        button.setImage(UIImage(named: "settings.png"), forState: UIControlState.Normal)
@@ -37,19 +40,13 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 //        
 //        let settingsButton = UIBarButtonItem(customView: button)
 //        self.navigationItem.leftBarButtonItem = settingsButton
-//       
-        //Edit/Done button
-        self.navigationItem.leftBarButtonItem = self.editButtonItem()
-        
+//
 //        tbItems.append(self.editButtonItem())
-        
-        
-                // Do any additional setup after loading the view, typically from a nib.
+// Do any additional setup after loading the view, typically from a nib.
 //        self.navigationItem.leftBarButtonItem = self.editButtonItem()
 //
 //        let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "insertNewObject:")
 //        self.navigationItem.rightBarButtonItem = addButton
-        
 //        self.workoutTable.reloadData()
         
     }
@@ -168,6 +165,8 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
             return UIImage(named: "WattLiftIcon")
         case "Cardio":
             return UIImage(named: "WattRunIcon")
+        case "Strength":
+            return UIImage(named: "WattStrIcon")
         default:
             return nil
         }
