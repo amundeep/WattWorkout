@@ -31,13 +31,12 @@ class InterfaceController: WKInterfaceController {
         println("Fucking debug shit")
     }
     
-
-
+    @IBOutlet weak var TestingLabel: WKInterfaceLabel!
 
     @IBAction func showNewEntryPage() {
+        TestingLabel.setText("Fucking debug shit")
         println("Fucking debug shit")
-        
-//        pushControllerWithName(name: ExercisePickerView, context: nil)
+        pushControllerWithName("ExercisePickerView", context: nil)
     }
 
 }

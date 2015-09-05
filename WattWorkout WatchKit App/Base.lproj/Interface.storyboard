@@ -5,12 +5,22 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="7701"/>
     </dependencies>
     <scenes>
-        <!--Interface Controller-->
+        <!--InitController-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="WattWorkout_WatchKit_Extension">
+                <controller identifier="InitController" id="AgC-eL-Hgc" userLabel="InitController" customClass="InterfaceController" customModule="WattWorkout_WatchKit_Extension">
                     <items>
                         <button width="1" alignment="left" title="Stats" id="TbL-19-3Ud" userLabel="StatsButton"/>
+                        <label alignment="center" text="Label" id="YMF-sz-VUQ" userLabel="TestingLabel">
+                            <attributedString key="userComments">
+                                <fragment content="TestingLabel">
+                                    <attributes>
+                                        <font key="NSFont" metaFont="smallSystem"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                    </attributes>
+                                </fragment>
+                            </attributedString>
+                        </label>
                     </items>
                     <menu key="menu" id="ldB-6k-WAX" userLabel="ForceTouchContextMenu">
                         <items>
@@ -24,11 +34,14 @@
                                     </fragment>
                                 </attributedString>
                                 <connections>
-                                    <action selector="showNewEntryPage" destination="AgC-eL-Hgc" id="Fen-tV-3pA"/>
+                                    <action selector="showNewEntryPage" destination="AgC-eL-Hgc" id="jA9-oT-kOD"/>
                                 </connections>
                             </menuItem>
                         </items>
                     </menu>
+                    <connections>
+                        <outlet property="TestingLabel" destination="YMF-sz-VUQ" id="GPl-gO-QJR"/>
+                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="220" y="345"/>
@@ -36,21 +49,12 @@
         <!--ExercisePickerView-->
         <scene sceneID="obI-O7-t1Z">
             <objects>
-                <controller identifier="ExercisePickerView" id="4Ru-MZ-SSg" userLabel="ExercisePickerView">
+                <controller identifier="ExercisePickerView" id="4Ru-MZ-SSg" userLabel="ExercisePickerView" customClass="InterfaceController" customModule="WattWorkout_WatchKit_Extension">
                     <items>
                         <table alignment="left" id="Yiz-9d-mhm">
                             <items>
                                 <tableRow identifier="Exercise0" id="Mp4-cH-MWD" userLabel="Exercise0TableViewController">
-                                    <group key="rootItem" width="1" alignment="left" id="7RZ-3b-noA" userLabel="Exercise0">
-                                        <attributedString key="userComments">
-                                            <fragment content="sdflsf;">
-                                                <attributes>
-                                                    <font key="NSFont" metaFont="smallSystem"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                                </attributes>
-                                            </fragment>
-                                        </attributedString>
-                                    </group>
+                                    <group key="rootItem" width="1" alignment="left" id="7RZ-3b-noA" userLabel="Exercise0"/>
                                     <attributedString key="userComments">
                                         <fragment content="Exercise1">
                                             <attributes>
@@ -65,7 +69,7 @@
                     </items>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="462" y="347"/>
+            <point key="canvasLocation" x="473" y="345"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">
@@ -86,7 +90,7 @@
         <!--Notification Controller-->
         <scene sceneID="ZPc-GJ-vnh">
             <objects>
-                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="WattWorkout_WatchKit_App" customModuleProvider="target"/>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="WattWorkout_WatchKit_Extension" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="468" y="643"/>
         </scene>
