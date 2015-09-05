@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		352012511B9A91BB0030A45B /* WattWorkout WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8A16A5E11B993C4000885022 /* WattWorkout WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		35D8CCC51B9A9BCB00E576CF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A16A5C41B992FF700885022 /* Images.xcassets */; };
 		8A16A5B91B992FF700885022 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A16A5B81B992FF700885022 /* AppDelegate.swift */; };
 		8A16A5BC1B992FF700885022 /* WattWorkout.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8A16A5BA1B992FF700885022 /* WattWorkout.xcdatamodeld */; };
 		8A16A5BE1B992FF700885022 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A16A5BD1B992FF700885022 /* MasterViewController.swift */; };
@@ -385,6 +386,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35D8CCC51B9A9BCB00E576CF /* Images.xcassets in Resources */,
 				8A16A5F71B993C4100885022 /* Interface.storyboard in Resources */,
 				8A16A5F91B993C4100885022 /* Images.xcassets in Resources */,
 			);
