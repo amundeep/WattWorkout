@@ -31,6 +31,10 @@
 		8AAE4FCD1B9A235700E012FB /* WattRunIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AAE4FCB1B9A235700E012FB /* WattRunIcon.png */; };
 		8AAE4FD01B9A239100E012FB /* WattLiftIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AAE4FCF1B9A239100E012FB /* WattLiftIcon.png */; };
 		8AAE4FD21B9A86E100E012FB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AAE4FD11B9A86E100E012FB /* Foundation.framework */; };
+<<<<<<< HEAD
+=======
+		8AE173251B9AA4BC00DBE59E /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AE173241B9AA4BC00DBE59E /* settings.png */; };
+>>>>>>> master
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +106,10 @@
 		8AAE4FCB1B9A235700E012FB /* WattRunIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WattRunIcon.png; sourceTree = "<group>"; };
 		8AAE4FCF1B9A239100E012FB /* WattLiftIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WattLiftIcon.png; sourceTree = "<group>"; };
 		8AAE4FD11B9A86E100E012FB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+<<<<<<< HEAD
+=======
+		8AE173241B9AA4BC00DBE59E /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = settings.png; path = ../../../../../Downloads/settings.png; sourceTree = "<group>"; };
+>>>>>>> master
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +173,7 @@
 				8A16A5C11B992FF700885022 /* Main.storyboard */,
 				8A16A5C41B992FF700885022 /* Images.xcassets */,
 				8AAE4FCB1B9A235700E012FB /* WattRunIcon.png */,
+				8AE173241B9AA4BC00DBE59E /* settings.png */,
 				8AAE4FCF1B9A239100E012FB /* WattLiftIcon.png */,
 				8A16A5C61B992FF700885022 /* LaunchScreen.xib */,
 				8A16A5BA1B992FF700885022 /* WattWorkout.xcdatamodeld */,
@@ -363,6 +372,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8AE173251B9AA4BC00DBE59E /* settings.png in Resources */,
 				8AAE4FCD1B9A235700E012FB /* WattRunIcon.png in Resources */,
 				8AAE4FD01B9A239100E012FB /* WattLiftIcon.png in Resources */,
 				8A16A5C31B992FF700885022 /* Main.storyboard in Resources */,
