@@ -13,10 +13,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 
     @IBOutlet var workoutTable: UITableView!
     
-    @IBOutlet weak var settings: UIBarButtonItem!
-//    var tbItems = [UIBarButtonItem]()
     
-//    var themeColor = UIColor(red: 255, green: 153, blue: 51, alpha: 1)
     var workouts: [Workout] = tableData
     
     var managedObjectContext: NSManagedObjectContext? = nil
@@ -28,23 +25,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        //Settings button
-//        let button: UIButton = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
-//        button.setImage(UIImage(named: "settings.png"), forState: UIControlState.Normal)
-//        button.addTarget(self, action: "settingsPressed", forControlEvents: UIControlEvents.TouchUpInside)
-//        button.frame = CGRectMake(0,0,30,30)
-//        
-//        let settingsButton = UIBarButtonItem(customView: button)
-//        self.navigationItem.leftBarButtonItem = settingsButton
-//       
-        //Edit/Done button
-        self.navigationItem.leftBarButtonItem = self.editButtonItem()
-        
-//        tbItems.append(self.editButtonItem())
-        
-        
-                // Do any additional setup after loading the view, typically from a nib.
+        // Do any additional setup after loading the view, typically from a nib.
 //        self.navigationItem.leftBarButtonItem = self.editButtonItem()
 //
 //        let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "insertNewObject:")
@@ -69,39 +50,11 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
             tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Left)
             
             
+            
         }
 
         tableView.reloadData()
     }
-    
-//    
-//    @IBAction func editWorkouts(sender: UIBarButtonItem) {
-//        self.editing = !self.editing
-//    }
-//    
-//    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-//        return true
-//    }
-//    
-//    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-//        var itemToMove = workouts[fromIndexPath.row]
-//        workouts.removeAtIndex(fromIndexPath.row)
-//        workouts.insert(itemToMove, atIndex: toIndexPath.row)
-//    }
-//    
-//    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-//        // Return false if you do not want the specified item to be editable.
-//        return true
-//    }
-//    
-//    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-//        if editingStyle == .Delete {
-//            workouts.removeAtIndex(indexPath.row)
-//            workoutTable.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
-//        }
-//    }
-    
-    
     
     
     override func didReceiveMemoryWarning() {
@@ -109,34 +62,32 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         // Dispose of any resources that can be recreated.
     }
 
-//    func insertNewObject(sender: AnyObject) {
-//        let context = self.fetchedResultsController.managedObjectContext
-//        let entity = self.fetchedResultsController.fetchRequest.entity!
-//        let newManagedObject = NSEntityDescription.insertNewObjectForEntityForName(entity.name!, inManagedObjectContext: context) as! NSManagedObject
-//             
-//        // If appropriate, configure the new managed object.
-//        // Normally you should use accessor methods, but using KVC here avoids the need to add a custom class to the template.
-//        newManagedObject.setValue(NSDate(), forKey: "timeStamp")
-//             
-//        // Save the context.
-//        var error: NSError? = nil
-//        if !context.save(&error) {
-//            // Replace this implementation with code to handle the error appropriately.
-//            // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-//            //println("Unresolved error \(error), \(error.userInfo)")
-//            abort()
-//        }
-//    }
+    func insertNewObject(sender: AnyObject) {
+        let context = self.fetchedResultsController.managedObjectContext
+        let entity = self.fetchedResultsController.fetchRequest.entity!
+        let newManagedObject = NSEntityDescription.insertNewObjectForEntityForName(entity.name!, inManagedObjectContext: context) as! NSManagedObject
+             
+        // If appropriate, configure the new managed object.
+        // Normally you should use accessor methods, but using KVC here avoids the need to add a custom class to the template.
+        newManagedObject.setValue(NSDate(), forKey: "timeStamp")
+             
+        // Save the context.
+        var error: NSError? = nil
+        if !context.save(&error) {
+            // Replace this implementation with code to handle the error appropriately.
+            // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+            //println("Unresolved error \(error), \(error.userInfo)")
+            abort()
+        }
+    }
 
     // MARK: - Segues
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        println(workouts.count)
         if segue.identifier == "showDetail" {
             if let indexPath = self.tableView.indexPathForSelectedRow() {
-                println(indexPath.row)
-                let object = self.fetchedResultsController.objectAtIndexPath(indexPath) as! NSManagedObject
-                (segue.destinationViewController as! DetailViewController).detailItem = object
+            let object = self.fetchedResultsController.objectAtIndexPath(indexPath) as! NSManagedObject
+            (segue.destinationViewController as! DetailViewController).detailItem = object
             }
         }
     }
@@ -195,7 +146,25 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         return cell
     }
 
- 
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        // Return false if you do not want the specified item to be editable.
+        return true
+    }
+
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == .Delete {
+            let context = self.fetchedResultsController.managedObjectContext
+            context.deleteObject(self.fetchedResultsController.objectAtIndexPath(indexPath) as! NSManagedObject)
+                
+            var error: NSError? = nil
+            if !context.save(&error) {
+                // Replace this implementation with code to handle the error appropriately.
+                // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+                //println("Unresolved error \(error), \(error.userInfo)")
+                abort()
+            }
+        }
+    }
 
     func configureCell(cell: UITableViewCell, atIndexPath indexPath: NSIndexPath) {
             let object = self.fetchedResultsController.objectAtIndexPath(indexPath) as! NSManagedObject

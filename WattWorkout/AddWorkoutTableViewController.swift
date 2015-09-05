@@ -78,7 +78,6 @@ class AddWorkoutTableViewController: UITableViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "SaveWorkoutDetail" {
-<<<<<<< HEAD
 //            if !(workoutName.text.isEmpty) {
 //                wName = workoutName.text
 //            }else{
@@ -87,12 +86,11 @@ class AddWorkoutTableViewController: UITableViewController {
 //                self.presentViewController(alert, animated: true, completion: nil)
 //                
 //            }
-=======
->>>>>>> master
             defValue = 0.0
             println("Name: " + wName + "\nType: " + wType + "\nValue: " + defValue.description)
             workout = Workout(wType: wType, wName: wName, cValue: defValue)
             tableData.insert(workout, atIndex: 0)
+            
         }
     }
     
