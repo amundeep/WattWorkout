@@ -11,6 +11,11 @@ import CoreData
 
 class MasterViewController: UITableViewController, NSFetchedResultsControllerDelegate {
 
+    @IBOutlet var workoutTable: UITableView!
+    
+    
+    var workouts: [Workout] = tableData
+    
     var managedObjectContext: NSManagedObjectContext? = nil
 
 
@@ -25,6 +30,9 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 //
 //        let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "insertNewObject:")
 //        self.navigationItem.rightBarButtonItem = addButton
+        
+//        self.workoutTable.reloadData()
+        
     }
 
     
@@ -35,7 +43,24 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     
     @IBAction func saveWorkoutDetail(segue: UIStoryboardSegue) {
         
+        if let addWorkoutViewController = segue.sourceViewController as? AddWorkoutTableViewController {
+ 
+            workouts.insert(addWorkoutViewController.workout, atIndex: 0)
+            
+            let indexPath = NSIndexPath(forRow: workouts.count-1, inSection: 0)
+            tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Left)
+            
+            
+            
+        }
         
+        
+//        var indexPath = NSIndexPath(forRow: 0, inSection: 0)
+//        workoutTable.beginUpdates()
+////        workoutTable.insertRowsAtIndexPaths(indexPath: workouts[0], withRowAnimation: <#UITableViewRowAnimation#>)
+//        workoutTable.insertRowsAtIndexPaths(indexPath, withRowAnimation: UITableViewRowAnimation.Left)
+//        workoutTable.endUpdates()
+        tableView.reloadData()
     }
     
     
@@ -77,17 +102,46 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     // MARK: - Table View
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return self.fetchedResultsController.sections?.count ?? 0
+//        return self.fetchedResultsController.sections?.count ?? 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let sectionInfo = self.fetchedResultsController.sections![section] as! NSFetchedResultsSectionInfo
-        return sectionInfo.numberOfObjects
+//        let sectionInfo = self.fetchedResultsController.sections![section] as! NSFetchedResultsSectionInfo
+//        return sectionInfo.numberOfObjects
+        return workouts.count
     }
 
+    func getWorkoutImage(type: String) -> UIImage?{
+        switch type{
+        case "Lift":
+            return UIImage(named: "WattLiftIcon")
+        case "Cardio":
+            return UIImage(named: "WattRunIcon")
+        default:
+            return nil
+        }
+    }
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! UITableViewCell
-        self.configureCell(cell, atIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("WorkoutCell", forIndexPath: indexPath) as! UITableViewCell
+//        self.configureCell(cell, atIndexPath: indexPath)
+        
+        let workout = workouts[indexPath.row] as Workout
+        
+        if let workoutLabel = cell.viewWithTag(101) as? UILabel {
+            workoutLabel.text = workout.name
+        }
+        if let workoutValue = cell.viewWithTag(102) as? UILabel {
+            workoutValue.text = workout.value.description
+            println(workout.value.description)
+        }
+        if let workoutImage = cell.viewWithTag(100) as? UIImageView {
+            workoutImage.image = self.getWorkoutImage(workout.type)
+        }
+        
+//        cell.textLabel?.text = workout.name
+//        cell.detailTextLabel?.text = workout.value.description
         return cell
     }
 
