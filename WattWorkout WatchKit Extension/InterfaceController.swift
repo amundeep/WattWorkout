@@ -16,6 +16,7 @@ class InterfaceController: WKInterfaceController {
         super.awakeWithContext(context)
         
         // Configure interface objects here.
+        println("Fucking debug shit")
     }
 
     override func willActivate() {
@@ -27,6 +28,7 @@ class InterfaceController: WKInterfaceController {
     override func didDeactivate() {
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()
+        println("Fucking debug shit")
     }
     
 

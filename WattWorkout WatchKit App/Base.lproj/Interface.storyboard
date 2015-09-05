@@ -8,13 +8,13 @@
         <!--Interface Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="WattWorkout_WatchKit_App" customModuleProvider="target">
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="WattWorkout_WatchKit_Extension">
                     <items>
                         <button width="1" alignment="left" title="Stats" id="TbL-19-3Ud" userLabel="StatsButton"/>
                     </items>
                     <menu key="menu" id="ldB-6k-WAX" userLabel="ForceTouchContextMenu">
                         <items>
-                            <menuItem title="New Entry..." icon="block" id="qYC-yt-7CC" userLabel="New Entry...">
+                            <menuItem title="New Entry..." icon="add" id="qYC-yt-7CC" userLabel="New Entry...">
                                 <attributedString key="userComments">
                                     <fragment content="newEntry">
                                         <attributes>
