@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Foundation
+
 
 class AddWorkoutTableViewController: UITableViewController {
 
@@ -59,16 +61,31 @@ class AddWorkoutTableViewController: UITableViewController {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     
-    
+    override func shouldPerformSegueWithIdentifier(identifier: String?, sender: AnyObject?) -> Bool {
+        if(identifier == "SaveWorkoutDetail"){
+            if !(workoutName.text.isEmpty) {
+                wName = workoutName.text
+                return true
+            }else{
+                var alert = UIAlertController(title: "Need name!", message: "Your workout needs a name, please enter one.", preferredStyle: UIAlertControllerStyle.Alert)
+                alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil))
+                self.presentViewController(alert, animated: true, completion: nil)
+                return false
+            }
+        }
+        return true
+    }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "SaveWorkoutDetail" {
-            if workoutName.text != nil {
-                wName = workoutName.text
-            }else{
-                wName = ""
-                // GIVE ERROR HERE
-            }
+//            if !(workoutName.text.isEmpty) {
+//                wName = workoutName.text
+//            }else{
+//                var alert = UIAlertController(title: "Need name!", message: "Your workout needs a name, please enter one.", preferredStyle: UIAlertControllerStyle.Alert)
+//                alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil))
+//                self.presentViewController(alert, animated: true, completion: nil)
+//                
+//            }
             defValue = 0.0
             println("Name: " + wName + "\nType: " + wType + "\nValue: " + defValue.description)
             workout = Workout(wType: wType, wName: wName, cValue: defValue)

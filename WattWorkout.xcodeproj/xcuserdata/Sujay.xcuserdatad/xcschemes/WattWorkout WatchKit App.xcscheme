@@ -14,6 +14,20 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
+               BlueprintIdentifier = "8A16A5ED1B993C4000885022"
+               BuildableName = "WattWorkout WatchKit App.app"
+               BlueprintName = "WattWorkout WatchKit App"
+               ReferencedContainer = "container:WattWorkout.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
                BlueprintIdentifier = "8A16A5B21B992FF700885022"
                BuildableName = "WattWorkout.app"
                BlueprintName = "WattWorkout"
@@ -23,14 +37,14 @@
          <BuildActionEntry
             buildForTesting = "YES"
             buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8A16A5CC1B992FF700885022"
-               BuildableName = "WattWorkoutTests.xctest"
-               BlueprintName = "WattWorkoutTests"
+               BlueprintIdentifier = "8A16A5E01B993C4000885022"
+               BuildableName = "WattWorkout WatchKit Extension.appex"
+               BlueprintName = "WattWorkout WatchKit Extension"
                ReferencedContainer = "container:WattWorkout.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -42,23 +56,13 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       buildConfiguration = "Debug">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8A16A5CC1B992FF700885022"
-               BuildableName = "WattWorkoutTests.xctest"
-               BlueprintName = "WattWorkoutTests"
-               ReferencedContainer = "container:WattWorkout.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8A16A5B21B992FF700885022"
-            BuildableName = "WattWorkout.app"
-            BlueprintName = "WattWorkout"
+            BlueprintIdentifier = "8A16A5ED1B993C4000885022"
+            BuildableName = "WattWorkout WatchKit App.app"
+            BlueprintName = "WattWorkout WatchKit App"
             ReferencedContainer = "container:WattWorkout.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -72,16 +76,27 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <RemoteRunnable
+         runnableDebuggingMode = "2"
+         BundleIdentifier = "com.apple.springboard"
+         RemotePath = "/WattWorkout">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8A16A5B21B992FF700885022"
-            BuildableName = "WattWorkout.app"
-            BlueprintName = "WattWorkout"
+            BlueprintIdentifier = "8A16A5ED1B993C4000885022"
+            BuildableName = "WattWorkout WatchKit App.app"
+            BlueprintName = "WattWorkout WatchKit App"
             ReferencedContainer = "container:WattWorkout.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </RemoteRunnable>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "8A16A5ED1B993C4000885022"
+            BuildableName = "WattWorkout WatchKit App.app"
+            BlueprintName = "WattWorkout WatchKit App"
+            ReferencedContainer = "container:WattWorkout.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -91,16 +106,27 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <RemoteRunnable
+         runnableDebuggingMode = "2"
+         BundleIdentifier = "com.apple.springboard"
+         RemotePath = "/WattWorkout">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8A16A5B21B992FF700885022"
-            BuildableName = "WattWorkout.app"
-            BlueprintName = "WattWorkout"
+            BlueprintIdentifier = "8A16A5ED1B993C4000885022"
+            BuildableName = "WattWorkout WatchKit App.app"
+            BlueprintName = "WattWorkout WatchKit App"
             ReferencedContainer = "container:WattWorkout.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </RemoteRunnable>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "8A16A5ED1B993C4000885022"
+            BuildableName = "WattWorkout WatchKit App.app"
+            BlueprintName = "WattWorkout WatchKit App"
+            ReferencedContainer = "container:WattWorkout.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
