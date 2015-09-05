@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>B6D7C220-597D-4480-8137-A80C233A71D8</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>WattWorkout</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>A6CC99857F4D68FE93E443FB1A55F623B50B0482</key>
 		<string>https://github.com/amundeep/WattWorkout</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>WattWorkout.xcodeproj/project.xcworkspace</string>
+	<string>WattWorkout.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>A6CC99857F4D68FE93E443FB1A55F623B50B0482</key>
