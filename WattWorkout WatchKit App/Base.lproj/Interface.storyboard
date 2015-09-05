@@ -14,15 +14,18 @@
                     </items>
                     <menu key="menu" id="ldB-6k-WAX" userLabel="ForceTouchContextMenu">
                         <items>
-                            <menuItem title="New Entry..." icon="add" id="qYC-yt-7CC" userLabel="New Entry...">
+                            <menuItem title="New Entry..." icon="block" id="qYC-yt-7CC" userLabel="New Entry...">
                                 <attributedString key="userComments">
-                                    <fragment content="New Entry...">
+                                    <fragment content="newEntry">
                                         <attributes>
                                             <font key="NSFont" metaFont="smallSystem"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
+                                <connections>
+                                    <action selector="showNewEntryPage" destination="AgC-eL-Hgc" id="Fen-tV-3pA"/>
+                                </connections>
                             </menuItem>
                         </items>
                     </menu>
@@ -30,14 +33,14 @@
             </objects>
             <point key="canvasLocation" x="220" y="345"/>
         </scene>
-        <!--Interface Controller-->
+        <!--ExercisePickerView-->
         <scene sceneID="obI-O7-t1Z">
             <objects>
-                <controller id="4Ru-MZ-SSg">
+                <controller identifier="ExercisePickerView" id="4Ru-MZ-SSg" userLabel="ExercisePickerView">
                     <items>
                         <table alignment="left" id="Yiz-9d-mhm">
                             <items>
-                                <tableRow id="Mp4-cH-MWD" userLabel="Exercise0TableViewController">
+                                <tableRow identifier="Exercise0" id="Mp4-cH-MWD" userLabel="Exercise0TableViewController">
                                     <group key="rootItem" width="1" alignment="left" id="7RZ-3b-noA" userLabel="Exercise0">
                                         <attributedString key="userComments">
                                             <fragment content="sdflsf;">
@@ -56,9 +59,6 @@
                                             </attributes>
                                         </fragment>
                                     </attributedString>
-                                </tableRow>
-                                <tableRow id="L0C-qi-zHQ" userLabel="Exercise1TableViewcontroller">
-                                    <group key="rootItem" width="1" alignment="left" id="1zK-Ah-kgN" userLabel="Exercise1"/>
                                 </tableRow>
                             </items>
                         </table>
