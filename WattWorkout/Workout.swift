@@ -15,6 +15,7 @@ class Workout: NSObject {
     var value: Double
     
     
+    
     init(wType: String, wName: String, cValue: Double){
         type = wType
         name = wName
