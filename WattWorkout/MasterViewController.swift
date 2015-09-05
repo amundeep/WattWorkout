@@ -34,7 +34,6 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 //        self.workoutTable.reloadData()
         
     }
-
     
     @IBAction func cancelToDashboard(segue: UIStoryboardSegue) {
         
@@ -53,13 +52,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
             
             
         }
-        
-        
-//        var indexPath = NSIndexPath(forRow: 0, inSection: 0)
-//        workoutTable.beginUpdates()
-////        workoutTable.insertRowsAtIndexPaths(indexPath: workouts[0], withRowAnimation: <#UITableViewRowAnimation#>)
-//        workoutTable.insertRowsAtIndexPaths(indexPath, withRowAnimation: UITableViewRowAnimation.Left)
-//        workoutTable.endUpdates()
+
         tableView.reloadData()
     }
     
@@ -111,6 +104,14 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 //        return sectionInfo.numberOfObjects
         return workouts.count
     }
+    
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
+    
+    
 
     func getWorkoutImage(type: String) -> UIImage?{
         switch type{
