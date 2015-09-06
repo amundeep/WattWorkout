@@ -185,6 +185,19 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
             workoutValue.text = workout.value.description
             println(workout.value.description)
         }
+        if let latestDate = cell.viewWithTag(103) as? UILabel {
+            //WILL HAVE TO CHANGE BASED ON USER DEFAULTS
+//            var cellWidth = cell.contentView.frame.size.width
+//            var x = dateLabel.frame.origin.x
+//            var y = dateLabel.frame.origin.y
+//            var h = dateLabel.frame.height
+//            dateLabel.frame = CGRectMake(x, y, cellWidth/4, h)
+            
+            let date = NSDate()
+            let formatter = NSDateFormatter()
+            formatter.dateStyle = .ShortStyle
+            latestDate.text = formatter.stringFromDate(date)
+        }
         if let workoutImage = cell.viewWithTag(100) as? UIImageView {
             workoutImage.image = self.getWorkoutImage(workout.type)
         }
