@@ -13,6 +13,7 @@ class Workout: NSObject {
     var type: String
     var name: String
     var value: Double
+//    var datemod: String
     
     
     

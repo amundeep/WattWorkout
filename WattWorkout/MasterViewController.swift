@@ -11,14 +11,15 @@ import CoreData
 
 class MasterViewController: UITableViewController, NSFetchedResultsControllerDelegate {
 
+    
+    //Outlets
     @IBOutlet var workoutTable: UITableView!
     
     @IBOutlet weak var settings: UIBarButtonItem!
-//    var tbItems = [UIBarButtonItem]()
     
-//    var themeColor = UIColor(red: 255, green: 153, blue: 51, alpha: 1)
-    var workouts: [Workout] = tableData
     
+    //Variables and Constants
+    var workouts: [Workout] = globalVar.tableData
     var managedObjectContext: NSManagedObjectContext? = nil
 
 
@@ -26,6 +27,10 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         super.awakeFromNib()
     }
 
+
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -49,7 +54,11 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 //        self.navigationItem.rightBarButtonItem = addButton
 //        self.workoutTable.reloadData()
         
+        
     }
+    
+    
+    
     
     @IBAction func cancelToDashboard(segue: UIStoryboardSegue) {
         
@@ -60,7 +69,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         
         if let addWorkoutViewController = segue.sourceViewController as? AddWorkoutTableViewController {
  
-            workouts.insert(addWorkoutViewController.workout, atIndex: 0)
+            workouts.insert(addWorkoutViewController.newWorkout, atIndex: 0)
             
             let indexPath = NSIndexPath(forRow: workouts.count-1, inSection: 0)
             tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Left)

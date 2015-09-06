@@ -11,11 +11,13 @@ import Foundation
 
 
 class AddWorkoutTableViewController: UITableViewController {
-
+    
+    var workouts: [Workout] = globalVar.tableData
+    
     var wName: String!
     var wType: String = "Lift"
     var defValue = 0.0
-    var workout: Workout!
+    var newWorkout: Workout!
     
     @IBOutlet weak var workoutName: UITextField!
     @IBOutlet weak var workoutType: UILabel!
@@ -81,8 +83,8 @@ class AddWorkoutTableViewController: UITableViewController {
         if segue.identifier == "SaveWorkoutDetail" {
             defValue = 0.0
             println("Name: " + wName + "\nType: " + wType + "\nValue: " + defValue.description)
-            workout = Workout(wType: wType, wName: wName, cValue: defValue)
-            tableData.insert(workout, atIndex: 0)
+            newWorkout = Workout(wType: wType, wName: wName, cValue: defValue)
+            workouts.insert(newWorkout, atIndex: 0)
         }
     }
     

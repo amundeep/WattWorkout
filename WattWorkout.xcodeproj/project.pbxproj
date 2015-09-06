@@ -25,7 +25,7 @@
 		8A5A769F1B9ADA8900C3A82E /* WattStrIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A5A769E1B9ADA8900C3A82E /* WattStrIcon.png */; };
 		8A9BCA041B995831004571D7 /* AddWorkoutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9BCA031B995831004571D7 /* AddWorkoutTableViewController.swift */; };
 		8AAE4FC81B99E6BC00E012FB /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AAE4FC71B99E6BC00E012FB /* Workout.swift */; };
-		8AAE4FCA1B99EF1A00E012FB /* TableData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AAE4FC91B99EF1A00E012FB /* TableData.swift */; };
+		8AAE4FCA1B99EF1A00E012FB /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AAE4FC91B99EF1A00E012FB /* Global.swift */; };
 		8AAE4FCD1B9A235700E012FB /* WattRunIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AAE4FCB1B9A235700E012FB /* WattRunIcon.png */; };
 		8AAE4FD01B9A239100E012FB /* WattLiftIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AAE4FCF1B9A239100E012FB /* WattLiftIcon.png */; };
 		8AAE4FD21B9A86E100E012FB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AAE4FD11B9A86E100E012FB /* Foundation.framework */; };
@@ -95,7 +95,7 @@
 		8A5A769E1B9ADA8900C3A82E /* WattStrIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WattStrIcon.png; sourceTree = "<group>"; };
 		8A9BCA031B995831004571D7 /* AddWorkoutTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddWorkoutTableViewController.swift; sourceTree = "<group>"; };
 		8AAE4FC71B99E6BC00E012FB /* Workout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
-		8AAE4FC91B99EF1A00E012FB /* TableData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableData.swift; sourceTree = "<group>"; };
+		8AAE4FC91B99EF1A00E012FB /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		8AAE4FCB1B9A235700E012FB /* WattRunIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WattRunIcon.png; sourceTree = "<group>"; };
 		8AAE4FCF1B9A239100E012FB /* WattLiftIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WattLiftIcon.png; sourceTree = "<group>"; };
 		8AAE4FD11B9A86E100E012FB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -158,7 +158,7 @@
 				8A16A5BF1B992FF700885022 /* DetailViewController.swift */,
 				8A9BCA031B995831004571D7 /* AddWorkoutTableViewController.swift */,
 				8AAE4FC71B99E6BC00E012FB /* Workout.swift */,
-				8AAE4FC91B99EF1A00E012FB /* TableData.swift */,
+				8AAE4FC91B99EF1A00E012FB /* Global.swift */,
 				8A16A5C11B992FF700885022 /* Main.storyboard */,
 				8A16A5C41B992FF700885022 /* Images.xcassets */,
 				8AAE4FCB1B9A235700E012FB /* WattRunIcon.png */,
@@ -403,7 +403,7 @@
 				8A16A5BC1B992FF700885022 /* WattWorkout.xcdatamodeld in Sources */,
 				8A16A5BE1B992FF700885022 /* MasterViewController.swift in Sources */,
 				8A9BCA041B995831004571D7 /* AddWorkoutTableViewController.swift in Sources */,
-				8AAE4FCA1B99EF1A00E012FB /* TableData.swift in Sources */,
+				8AAE4FCA1B99EF1A00E012FB /* Global.swift in Sources */,
 				8A16A5C01B992FF700885022 /* DetailViewController.swift in Sources */,
 				8AAE4FC81B99E6BC00E012FB /* Workout.swift in Sources */,
 			);
