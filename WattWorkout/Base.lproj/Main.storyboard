@@ -116,49 +116,45 @@
         <!--Workout-->
         <scene sceneID="Cn3-H9-jdl">
             <objects>
-                <viewController title="Workout" hidesBottomBarWhenPushed="YES" id="Ah7-4n-0Wa" customClass="DetailViewController" customModule="WattWorkout" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Workout" id="Ah7-4n-0Wa" customClass="DetailViewController" customModule="WattWorkout" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="cIm-e0-J51"/>
-                        <viewControllerLayoutGuide type="bottom" id="a0L-h9-sNL"/>
+                        <viewControllerLayoutGuide type="top" id="IOM-XF-1EM"/>
+                        <viewControllerLayoutGuide type="bottom" id="cm8-PA-VdH"/>
                     </layoutGuides>
-                    <scrollView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" id="21N-xg-91l">
+                    <view key="view" contentMode="scaleToFill" id="brC-y3-IXf">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hp3-ZQ-Pxi">
-                                <rect key="frame" x="16" y="64" width="568" height="472"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Updated: " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hiE-os-8Pf" userLabel="Last Updated:">
-                                        <rect key="frame" x="171.5" y="8" width="225" height="21"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="225" id="Jnw-9v-jWw"/>
-                                            <constraint firstAttribute="height" constant="21" id="hjj-xc-IOh"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
-                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Updated: " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3JK-Wq-SOT" userLabel="Last Updated:">
+                                <rect key="frame" x="188" y="72" width="225" height="21"/>
                                 <constraints>
-                                    <constraint firstItem="hiE-os-8Pf" firstAttribute="top" secondItem="hp3-ZQ-Pxi" secondAttribute="topMargin" id="iVd-Kp-fJF"/>
-                                    <constraint firstAttribute="centerX" secondItem="hiE-os-8Pf" secondAttribute="centerX" id="wIa-hr-Ow3"/>
+                                    <constraint firstAttribute="height" constant="21" id="9RK-yX-hPK"/>
+                                    <constraint firstAttribute="width" constant="225" id="O9L-51-RCS"/>
                                 </constraints>
-                            </view>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="a0L-h9-sNL" firstAttribute="top" secondItem="hp3-ZQ-Pxi" secondAttribute="bottom" id="4yz-CB-V68"/>
-                            <constraint firstAttribute="centerX" secondItem="hp3-ZQ-Pxi" secondAttribute="centerX" id="JdP-yQ-qrx"/>
-                            <constraint firstAttribute="centerY" secondItem="hp3-ZQ-Pxi" secondAttribute="centerY" id="Ygd-6g-69L"/>
-                            <constraint firstItem="hp3-ZQ-Pxi" firstAttribute="leading" secondItem="21N-xg-91l" secondAttribute="leadingMargin" id="Z2U-7v-cwF"/>
-                            <constraint firstItem="hp3-ZQ-Pxi" firstAttribute="top" secondItem="cIm-e0-J51" secondAttribute="bottom" id="sKV-3Q-vLd"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="hp3-ZQ-Pxi" secondAttribute="trailing" id="vqi-X4-fsE"/>
+                            <constraint firstItem="3JK-Wq-SOT" firstAttribute="top" secondItem="IOM-XF-1EM" secondAttribute="bottom" constant="8" id="9wq-jO-fEe"/>
+                            <constraint firstAttribute="centerX" secondItem="3JK-Wq-SOT" secondAttribute="centerX" id="DtL-qy-Fb2"/>
                         </constraints>
-                    </scrollView>
+                    </view>
+                    <toolbarItems>
+                        <barButtonItem title="View All Entries" id="2uE-AZ-bZ8">
+                            <color key="tintColor" red="1" green="0.59999999999999998" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="xbK-Bq-hIL"/>
+                        <barButtonItem title="Add Entry..." id="75o-ry-zhq">
+                            <color key="tintColor" red="1" green="0.59999999999999998" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
+                    </toolbarItems>
                     <navigationItem key="navigationItem" title="Detail" id="cra-N8-TIN"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="detailLastDate" destination="hiE-os-8Pf" id="0h8-nb-9Cz"/>
+                        <outlet property="detailLastDate" destination="3JK-Wq-SOT" id="0f8-xy-usB"/>
                         <outlet property="detailTitle" destination="cra-N8-TIN" id="b6v-LK-6Eo"/>
                     </connections>
                 </viewController>
