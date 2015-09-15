@@ -13,14 +13,15 @@ class Workout: NSObject {
     var type: String
     var name: String
     var value: Double
-//    var datemod: String
+    var datemod: NSDate
     
     
     
-    init(wType: String, wName: String, cValue: Double){
+    init(wType: String, wName: String, cValue: Double, wDate: NSDate){
         type = wType
         name = wName
         value = cValue
+        datemod =  wDate
         super.init()
     }
    

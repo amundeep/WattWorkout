@@ -10,29 +10,21 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
-    @IBOutlet weak var detailDescriptionLabel: UILabel!
-
-
-    var detailItem: AnyObject? {
-        didSet {
-            // Update the view.
-            self.configureView()
-        }
-    }
-
-    func configureView() {
-        // Update the user interface for the detail item.
-        if let detail: AnyObject = self.detailItem {
-            if let label = self.detailDescriptionLabel {
-                label.text = detail.valueForKey("timeStamp")!.description
-            }
-        }
-    }
-
+    @IBOutlet weak var detailLastDate: UILabel!
+    @IBOutlet weak var detailTitle: UINavigationItem!
+    var detailItem = String()
+    var detailDate = NSDate()
+    var phText = "Last Updated: "
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        self.configureView()
+        
+        detailTitle.title = detailItem
+        let formatter = NSDateFormatter()
+        formatter.dateStyle = .ShortStyle
+        detailLastDate.text = (phText + formatter.stringFromDate(detailDate))
+        
     }
 
     override func didReceiveMemoryWarning() {

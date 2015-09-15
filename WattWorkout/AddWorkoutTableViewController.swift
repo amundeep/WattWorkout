@@ -81,9 +81,10 @@ class AddWorkoutTableViewController: UITableViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "SaveWorkoutDetail" {
+            let date = NSDate()
             defValue = 0.0
             println("Name: " + wName + "\nType: " + wType + "\nValue: " + defValue.description)
-            newWorkout = Workout(wType: wType, wName: wName, cValue: defValue)
+            newWorkout = Workout(wType: wType, wName: wName, cValue: defValue, wDate: date)
             workouts.insert(newWorkout, atIndex: 0)
         }
     }

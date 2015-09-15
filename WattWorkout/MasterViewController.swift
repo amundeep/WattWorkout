@@ -14,29 +14,47 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     
     //Outlets
     @IBOutlet var workoutTable: UITableView!
-    
     @IBOutlet weak var settings: UIBarButtonItem!
     
     
     //Variables and Constants
-    var workouts: [Workout] = globalVar.tableData
+//    var workouts: [Workout] = globalVar.tableData
+    
     var managedObjectContext: NSManagedObjectContext? = nil
+    
+    var wos = [NSManagedObject]()
 
 
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-
-
+    
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        
         //Edit/Done button
         self.navigationItem.leftBarButtonItem = self.editButtonItem()
         
+//        
+//        var emptyWorkoutArray: [Workout] = []
+//        if ( !(def.objectForKey(userDataKey) as! [Workout]).isEmpty ) {
+//            println("Not Empty")
+//            globalVar.tableData = (def.objectForKey(userDataKey) as? [Workout])!
+//        }
+//        
 //        //Settings button
 //        let button: UIButton = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
 //        button.setImage(UIImage(named: "settings.png"), forState: UIControlState.Normal)
@@ -69,11 +87,11 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         
         if let addWorkoutViewController = segue.sourceViewController as? AddWorkoutTableViewController {
  
-            workouts.insert(addWorkoutViewController.newWorkout, atIndex: 0)
+//            workouts.insert(addWorkoutViewController.newWorkout, atIndex: 0)
+            self.saveWorkoutCD(addWorkoutViewController.newWorkout)
             
-            let indexPath = NSIndexPath(forRow: workouts.count-1, inSection: 0)
+            let indexPath = NSIndexPath(forRow: wos.count-1, inSection: 0)
             tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Left)
-            
             
         }
 
@@ -85,68 +103,86 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 //        self.editing = !self.editing
 //    }
     
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        return true
-    }
     
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-        var itemToMove = workouts[fromIndexPath.row]
-        workouts.removeAtIndex(fromIndexPath.row)
-        workouts.insert(itemToMove, atIndex: toIndexPath.row)
-    }
     
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            workouts.removeAtIndex(indexPath.row)
-            workoutTable.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+    func saveWorkoutCD(wo: Workout) {
+        
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let managedContext = appDelegate.managedObjectContext!
+        
+        let entity = NSEntityDescription.entityForName("Workout", inManagedObjectContext: managedContext)
+        
+        let workoutCD = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext)
+        
+        //Settings Core Data values
+        workoutCD.setValue(wo.name, forKey: "name")
+        workoutCD.setValue(wo.value, forKey: "value")
+        workoutCD.setValue(wo.datemod, forKey: "timeStamp")
+        workoutCD.setValue(wo.type, forKey: "type")
+        
+        //Error handling
+        var error: NSError?
+        if !managedContext.save(&error) {
+            println("Could not save \(error), \(error?.userInfo)")
         }
+        
+        wos.insert(workoutCD, atIndex: 0)
+        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let managedContext = appDelegate.managedObjectContext!
+        
+        let sort = NSSortDescriptor(key: "order", ascending: true)
+        
+        let fetchRequest = NSFetchRequest(entityName: "Workout")
+        fetchRequest.sortDescriptors = [sort]
+        
+        var error: NSError?
+        
+        let fetchedResults =
+        managedContext.executeFetchRequest(fetchRequest,
+            error: &error) as? [NSManagedObject]
+        
+        if let results = fetchedResults {
+            wos = results
+        } else {
+            println("Could not retrieve data")
+        }
+        
     }
     
     
     
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-//    func insertNewObject(sender: AnyObject) {
-//        let context = self.fetchedResultsController.managedObjectContext
-//        let entity = self.fetchedResultsController.fetchRequest.entity!
-//        let newManagedObject = NSEntityDescription.insertNewObjectForEntityForName(entity.name!, inManagedObjectContext: context) as! NSManagedObject
-//             
-//        // If appropriate, configure the new managed object.
-//        // Normally you should use accessor methods, but using KVC here avoids the need to add a custom class to the template.
-//        newManagedObject.setValue(NSDate(), forKey: "timeStamp")
-//             
-//        // Save the context.
-//        var error: NSError? = nil
-//        if !context.save(&error) {
-//            // Replace this implementation with code to handle the error appropriately.
-//            // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-//            //println("Unresolved error \(error), \(error.userInfo)")
-//            abort()
-//        }
-//    }
+    
 
     // MARK: - Segues
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        println(workouts.count)
+        println(wos.count)
         if segue.identifier == "showDetail" {
             if let indexPath = self.tableView.indexPathForSelectedRow() {
                 println(indexPath.row)
-                let object = self.fetchedResultsController.objectAtIndexPath(indexPath) as! NSManagedObject
-                (segue.destinationViewController as! DetailViewController).detailItem = object
+                let object: AnyObject? = wos[indexPath.row].valueForKey("name")
+                (segue.destinationViewController as! DetailViewController).detailItem = object as! String
+                let object2: AnyObject? = wos[indexPath.row].valueForKey("timeStamp")
+                (segue.destinationViewController as! DetailViewController).detailDate = object2 as! NSDate
+                
             }
         }
     }
 
+    
+    
+    
+    
+    
+    
+    
     // MARK: - Table View
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -157,15 +193,94 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 //        let sectionInfo = self.fetchedResultsController.sections![section] as! NSFetchedResultsSectionInfo
 //        return sectionInfo.numberOfObjects
-        return workouts.count
+        return wos.count
     }
     
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     
+    
+    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    
+    
+    //MOVE CELL
+    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
+        
+        var old = fromIndexPath.row
+        var new = toIndexPath.row
+        
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let managedContext = appDelegate.managedObjectContext!
+        let entity = NSEntityDescription.entityForName("Workout", inManagedObjectContext: managedContext)
+        
+        let blah = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext)
+        blah.setValue(new, forKey: "order")
+        
+//        let workoutCD = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext)
+        
+//        
+//        var request = NSFetchRequest(entityName: "Workout")
+//        var results: NSArray = managedContext.executeFetchRequest(request, error: nil)!
+//        println("RESULTS: " + results.description)
+//        
+        var itemToMove = wos[old]
+//        managedContext.deleteObject(wos[old])
+        wos.removeAtIndex(old)
+//        managedContext.insertObject(itemToMove)
+        wos.insert(itemToMove, atIndex: new)
+        
+        
+        if(new > old) {
+            for var i = old + 1; i <= new; ++i {
+                var temp = i - 1
+                wos[i].setValue(temp, forKey: "order")
+            }
+            wos[new].setValue(new, forKey: "order")
+        } else {
+            for var i = old - 1; i >= new; --i {
+                var temp = i + 1
+                wos[i].setValue(temp, forKey: "order")
+            }
+            wos[new].setValue(new, forKey: "order")
+        }
+        
+        
+        
+        var error: NSError?
+        if !managedContext.save(&error) {
+            println("Could not save \(error), \(error?.userInfo)")
+        }
+        
+    }
+    
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        // Return false if you do not want the specified item to be editable.
+        return true
+    }
+    
+    //DELETE CELL
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == .Delete {
+            
+            let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+            let managedContext = appDelegate.managedObjectContext!
+
+            var workoutCD = wos[indexPath.row]
+            
+            managedContext.deleteObject(workoutCD)
+            wos.removeAtIndex(indexPath.row)
+            workoutTable.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+            
+            var error: NSError?
+            if !managedContext.save(&error) {
+                println("Could not save \(error), \(error?.userInfo)")
+            }
+        }
+    }
     
 
     func getWorkoutImage(type: String) -> UIImage?{
@@ -181,18 +296,30 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         }
     }
     
+    func sortFunc(obj1: NSManagedObject, obj2: NSManagedObject) -> Bool {
+        
+        return ( (obj1.valueForKey("order") as? Int) < (obj2.valueForKey("order") as? Int) )
+        
+    }
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("WorkoutCell", forIndexPath: indexPath) as! UITableViewCell
 //        self.configureCell(cell, atIndexPath: indexPath)
         
-        let workout = workouts[indexPath.row] as Workout
+//        let workout = workouts[indexPath.row] as Workout
+        
+        var wosSorted = sorted(wos, sortFunc)
+        
+        println(wosSorted)
+        
+        let wo = wosSorted[indexPath.row]
         
         if let workoutLabel = cell.viewWithTag(101) as? UILabel {
-            workoutLabel.text = workout.name
+            workoutLabel.text = wo.valueForKey("name") as? String
         }
         if let workoutValue = cell.viewWithTag(102) as? UILabel {
-            workoutValue.text = workout.value.description
-            println(workout.value.description)
+            workoutValue.text = wo.valueForKey("value") as? String
+            println(wo.valueForKey("value")?.description)
         }
         if let latestDate = cell.viewWithTag(103) as? UILabel {
             //WILL HAVE TO CHANGE BASED ON USER DEFAULTS
@@ -202,13 +329,14 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 //            var h = dateLabel.frame.height
 //            dateLabel.frame = CGRectMake(x, y, cellWidth/4, h)
             
-            let date = NSDate()
+            
+            let date = wo.valueForKey("timeStamp") as? NSDate
             let formatter = NSDateFormatter()
             formatter.dateStyle = .ShortStyle
-            latestDate.text = formatter.stringFromDate(date)
+            latestDate.text = formatter.stringFromDate(date!)
         }
         if let workoutImage = cell.viewWithTag(100) as? UIImageView {
-            workoutImage.image = self.getWorkoutImage(workout.type)
+            workoutImage.image = self.getWorkoutImage(wo.valueForKey("type") as! String)
         }
         
 //        cell.textLabel?.text = workout.name
@@ -218,9 +346,23 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 
  
 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     func configureCell(cell: UITableViewCell, atIndexPath indexPath: NSIndexPath) {
             let object = self.fetchedResultsController.objectAtIndexPath(indexPath) as! NSManagedObject
-        cell.textLabel!.text = object.valueForKey("timeStamp")!.description
+            cell.textLabel!.text = object.valueForKey("timeStamp")!.description
     }
 
     // MARK: - Fetched results controller

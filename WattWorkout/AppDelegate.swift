@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let navigationController = self.window!.rootViewController as! UINavigationController
         let controller = navigationController.topViewController as! MasterViewController
         controller.managedObjectContext = self.managedObjectContext
+        
         return true
     }
 
@@ -33,10 +34,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
         
         println("Entered background")
-        
-        let def = NSUserDefaults.standardUserDefaults()
-        var key = "keyWorkouts"
-        
+
+        //See Global.swift for definitions for "def" and "userDataKey"
+//        
+//        def.setObject(globalVar.tableData, forKey: userDataKey)
+//        def.synchronize()
+//        
     }
 
     func applicationWillEnterForeground(application: UIApplication) {
